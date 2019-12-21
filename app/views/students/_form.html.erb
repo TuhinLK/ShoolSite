@@ -1,0 +1,81 @@
+<div class="form">
+	
+	<%= form_for (student) do |f| %>
+		<% if student.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being save:</h2>
+				<ul>
+					<% student.errors.full_messages.each do |message| %>
+						<li><%= message %></li>
+					<% end %>
+				</ul>
+			</div>
+		<% end %>
+		<div class="row">
+			<div class="field">
+				<%= f.label :first_name %>				
+			</div>
+			<div class="field2">
+				<%= f.text_field :first_name %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="field">
+				<%= f.label :last_name %>				
+			</div>
+			<div class="field2">
+				<%= f.text_field :last_name %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="field">
+				<%= f.label :phone_number %>				
+			</div>
+			<div class="field2">
+				<%= f.text_field :phone_number %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="field">
+				<%= f.label :email %>				
+			</div>
+			<div class="field2">
+				<%= f.text_field :email %>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="field">
+				<%= f.label :address %>
+			</div>
+			<div class="field2">
+				<%= f.text_area :address %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<%= f.label :class_name %>
+			</div>
+			<div class="field2">
+				<%= f.collection_select :class_create_id , ClassCreate.all,:id, :class_name ,prompt: true %>
+			</div>
+		</div>
+		<div class="row">
+			<%= f.fields_for :parent_students do |ff| %>
+				<div class="field">
+					<%= ff.label :parent_name %>
+				</div>
+				<div class="field2">
+					<%= ff.collection_select :parent_id , Parent.all , :id , :fullname, prompt: true %>
+				</div>
+			<% end %>
+		</div>
+		
+		<div class="row">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

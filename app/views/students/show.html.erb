@@ -1,0 +1,29 @@
+<p>
+  <strong>Student Name:</strong>
+  <%= @student.fullname %>
+</p>
+<p>
+  <strong> Phone Number:</strong>
+  <%= @student.phone_number %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @student.email %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @student.address %>
+</p>
+<% @student.parents.each do |parent| %>
+	<p>
+	  <strong>Parent Name:</strong>
+	  <%= parent.fullname %>
+	</p>
+<% end %>
+<p>
+	<strong>School Name:</strong>
+	<%= @school.school_name %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %>
+<%= link_to 'Back', students_path %>

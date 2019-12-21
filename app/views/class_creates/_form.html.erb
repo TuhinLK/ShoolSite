@@ -1,0 +1,18 @@
+<div class="form">
+	
+	<%= form_for (classcreate) do |f| %>
+		<div class="row">
+			<div class="field">
+				<%= f.label :class_name %>				
+			</div>
+			<div class="field2">
+				<%= f.text_field :class_name %>
+			</div>
+		</div>
+		<%= f.hidden_field :school_id , :value => current_user.school.id %> 
+		
+		<div class="row">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

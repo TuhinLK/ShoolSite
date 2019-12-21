@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+	<% @school.students.each do |student| %>
+		<p>
+			<strong>Student Name:</strong>
+			<%= student.fullname %>
+		</p>
+		<% student.parents.each do |parents| %>
+			<p>
+			<strong>Parent Name:</strong>
+			<%= parents.fullname %>
+		</p>
+		<% end %>
+		
+	<% end %>
+<% end %>

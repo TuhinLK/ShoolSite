@@ -1,0 +1,18 @@
+<p>
+  <strong>Parent Name:</strong>
+  <%= @parent.fullname %>
+</p>
+<p>
+  <strong> Phone Number:</strong>
+  <%= @parent.phone_number %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @parent.email %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @parent.address %>
+</p>
+<%= link_to 'Edit', edit_parent_path(@parent) %>
+<%= link_to 'Back', parents_path %>

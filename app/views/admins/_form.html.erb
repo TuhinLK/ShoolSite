@@ -1,0 +1,57 @@
+<div class="form">
+	<%= nested_form_for (admin) do |f| %>
+
+	  <div class="row">
+
+	    <div class="field">
+	      <%= f.label :first_name %>
+	    </div>
+	    <div class="field2">
+	      <%= f.text_field :first_name %>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="field">
+	      <%= f.label :last_name %>
+	    </div>
+	    <div class="field2">
+	      <%= f.text_field :last_name %>
+	    </div>
+	    
+	  </div>
+	  <div class="row">
+	    <div class="field">
+	      <%= f.label :email %>
+	    </div>
+	    <div class="field2">
+	      <%= f.email_field :email , autofocus: true, autocomplete: "email" %>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="field">
+	      <%= f.label :password %>
+	    </div>
+	    <div class="field2">
+	      <% if @minimum_password_length %>
+	        <em>(<%= @minimum_password_length %> characters minimum)</em><br/>
+	      <% end %>
+	    <%= f.password_field :password, autocomplete: "new-password" %>
+	    </div>
+	    
+	  </div>
+	  <div class="row">
+	    <div class="field">
+	      <%= f.label :password_confirmation %>
+	    </div>
+	    <div class="field2">
+	      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+	    </div>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Sign up" %>
+	  </div>
+	  <% end %>
+</div>

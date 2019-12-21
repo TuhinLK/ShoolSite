@@ -1,0 +1,34 @@
+<div class="form">
+	
+	<%= form_for (subject) do |f| %>
+		<div class="row">
+			<div class="field">
+				<%= f.label :subject_name %>				
+			</div>
+			<div class="field2">
+				<%= f.text_field :subject_name %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="field">
+				<%= f.label :teacher_name %>				
+			</div>
+			<div class="field2">
+				<%= f.collection_select :teacher_id , Teacher.all , :id , :fullname , prompt: true %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="field">
+				<%= f.label :class_name %>
+			</div>
+			<div class="field2">
+				<%= f.collection_select :class_create_id , ClassCreate.all, :id,:class_name , prompt: true %>
+			</div>
+		</div>
+		
+		<div class="row">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

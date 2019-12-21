@@ -1,0 +1,22 @@
+<p>
+  <strong>Teacher Name:</strong>
+  <%= @teacher.fullname %>
+</p>
+<p>
+  <strong> Phone Number:</strong>
+  <%= @teacher.phone_number %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @teacher.email %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @teacher.address %>
+</p>
+<p>
+  <strong>Subject Name:</strong>
+  <%= @teacher.subject.subject_name%>
+</p>
+<%= link_to 'Edit', edit_teacher_path(@teacher) %>
+<%= link_to 'Back', teachers_path %>
